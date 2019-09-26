@@ -20,6 +20,12 @@ export default new Router({
       component: () => import("./views/Login")
     },
     {
+      path: "/register",
+      name: "register",
+      meta: { layout: "empty" },
+      component: () => import("./views/Register")
+    },
+    {
       path: "/categories",
       name: "categories",
       meta: { layout: "main" },
