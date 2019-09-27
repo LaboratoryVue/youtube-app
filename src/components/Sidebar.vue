@@ -3,9 +3,9 @@
     <router-link
       tag="li"
       v-for="link in links"
-      :key="link.id"
+      :key="link.url"
       active-class="active"
-      exact
+      :exact="link.exact"
       :to="'/' + link.path"
       ><a class="waves-effect waves-orange pointer">{{
         link.title
@@ -20,11 +20,11 @@ export default {
   data() {
     return {
       links: [
-        { id: "1", title: "Счет", path: "" },
-        { id: "2", title: "История", path: "history" },
-        { id: "3", title: "Планирование", path: "planning" },
-        { id: "4", title: "Новая запись", path: "record" },
-        { id: "5", title: "Категории", path: "categories" }
+        { title: "Счет", path: "", exact: true },
+        { title: "История", path: "history" },
+        { title: "Планирование", path: "planning" },
+        { title: "Новая запись", path: "record" },
+        { title: "Категории", path: "categories" }
       ]
     };
   }
