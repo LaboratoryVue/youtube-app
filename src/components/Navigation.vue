@@ -5,12 +5,17 @@
         <a href="#" @click.prevent="$emit('navClick')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <span class="black-text">{{ date }}</span>
+        <span class="black-text">{{ date | date("time") }}</span>
       </div>
 
       <ul class="right hide-on-small-and-down">
         <li>
-          <a class="dropdown-trigger black-text" href="#" data-target="dropdown" ref="dropdown">
+          <a
+            class="dropdown-trigger black-text"
+            href="#"
+            data-target="dropdown"
+            ref="dropdown"
+          >
             USER NAME
             <i class="material-icons right">arrow_drop_down</i>
           </a>

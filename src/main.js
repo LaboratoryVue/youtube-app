@@ -5,6 +5,10 @@ import store from "./store";
 import "./registerServiceWorker";
 import "materialize-css/dist/js/materialize.min";
 
+import dateFilter from "./filters/data";
+
+Vue.filter("date", dateFilter);
+
 Vue.config.productionTip = false;
 
 new Vue({
