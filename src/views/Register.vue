@@ -1,25 +1,25 @@
 <template>
-  <form class="card auth-card">
+  <form class="card auth-card" @submit.prevent="onSubmit">
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
-        <input id="email" type="text" />
+        <input id="email" type="text" v-model.trim="email" />
         <label for="email">Email</label>
         <small class="helper-text invalid">Email</small>
       </div>
       <div class="input-field">
-        <input id="password" type="password" class="validate" />
+        <input id="password" type="password" class="validate" v-model.trim="password" />
         <label for="password">Пароль</label>
         <small class="helper-text invalid">Password</small>
       </div>
       <div class="input-field">
-        <input id="name" type="text" class="validate" />
+        <input id="name" type="text" class="validate" v-model.trim="name" />
         <label for="name">Имя</label>
         <small class="helper-text invalid">Name</small>
       </div>
       <p>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" v-model="agree" />
           <span>С правилами согласен</span>
         </label>
       </p>
@@ -34,7 +34,7 @@
 
       <p class="center">
         Уже есть аккаунт?
-        <a href="/">Войти!</a>
+        <router-link to="/login">Войти!</router-link>
       </p>
     </div>
   </form>
@@ -42,7 +42,24 @@
 
 <script>
 export default {
-  name: "Register"
+  name: 'Register',
+  data: () => ({
+    email: null,
+    password: null,
+    name: null,
+    agree: null,
+  }),
+  methods: {
+    onSubmit() {
+      const formData = {
+        email: this.email,
+        password: this.password,
+        name: this.name,
+        agree: this.agree,
+      };
+      console.log(formData);
+    },
+  },
 };
 </script>
 
