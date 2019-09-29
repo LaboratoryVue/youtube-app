@@ -1,6 +1,10 @@
 <template>
   <div class="fixed-action-btn">
-    <a class="btn-floating btn-large blue" href="#">
+    <a
+      class="btn-floating btn-large blue"
+      href="#"
+      @click.prevent="navigateHandler"
+    >
       <i class="large material-icons">add</i>
     </a>
   </div>
@@ -8,7 +12,12 @@
 
 <script>
 export default {
-  name: "TopButton"
+  name: "TopButton",
+  methods: {
+    navigateHandler() {
+      this.$router.push("record");
+    }
+  }
 };
 </script>
 
